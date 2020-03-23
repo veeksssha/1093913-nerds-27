@@ -1134,7 +1134,12 @@ body {
 	position: relative;
 	margin-top: 60px;
 	padding-bottom: 50px;
+}
 
+.map-wrapper {
+	background-image: url("../img/map.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%
 }
 
 .map-wrapper iframe {
@@ -1144,15 +1149,11 @@ body {
 
 	width: 100%;
 	border: none;
-
-	background-image: url("../img/map.jpg");
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 }
 
 .map-container {
 	position: relative;
-  padding-top: 422px;
+	padding-top: 422px;
 }
 
 .map-container::before {
