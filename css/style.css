@@ -31,6 +31,8 @@ body {
 
 .button {
 	padding: 15px 54px;
+	box-sizing: border-box;
+	overflow-wrap: break-word;
 
 	text-transform: uppercase;
 	text-decoration: none;
@@ -39,6 +41,7 @@ body {
 	font-weight: 500;
 
 	border-radius: 5px;
+	border: none;
 	background-color: #fb565a;
 	color: #ffffff;
 }
@@ -788,6 +791,10 @@ body {
 	opacity: 1;
 }
 
+.checkbox:focus ~ .filter-checkbox::before {
+	outline: 3px solid #99999b;
+}
+
 .checkbox:disabled ~ .filter-checkbox {
 	color: rgba(40, 49, 54, 0.3);
 }
@@ -819,6 +826,10 @@ body {
 
 .radio:hover ~ .filter-radio::before {
 	opacity: 1;
+}
+
+.radio:focus ~ .filter-radio::before {
+	outline: 3px solid #99999b;
 }
 
 .radio:disabled ~ .filter-radio {
@@ -874,9 +885,10 @@ body {
 
 .sorting-list {
 	display: flex;
-	width: 360px;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	width: 500px;
 	margin: 0;
-	margin-top: 3px;
 	padding: 0;
 	list-style: none;
 }
@@ -907,9 +919,6 @@ body {
 }
 
 .sorting-order {
-	position: absolute;
-	right: 0;
-
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1091,9 +1100,10 @@ body {
 .pagination-item a {
 	display: block;
 	width: 50px;
-	height: 50px;
+	min-height: 50px;
 	padding: 18px 0px;
 	box-sizing: border-box;
+	word-break: break-all;
 
 	text-decoration: none;
 	text-align: center;
@@ -1121,15 +1131,21 @@ body {
 /* Стили футера */
 
 .page-footer {
+	position: relative;
 	margin-top: 60px;
 	padding-bottom: 50px;
+
 }
 
 .map-wrapper {
-	position: relative;
+	
 }
 
 .map-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+
 	width: 100%;
 	border: none;
 
@@ -1139,10 +1155,8 @@ body {
 }
 
 .map-container {
-	position: absolute;
-
-	top: 0;
-	left: 0;
+	position: relative;
+  padding-top: 422px;
 }
 
 .map-container::before {
@@ -1150,7 +1164,7 @@ body {
 
 	position: absolute;
 	top: 90px;
-	right: 190px;
+	right: 248px;
 
 	width: 231px;
 	height: 190px;
@@ -1162,8 +1176,8 @@ body {
 
 .contacts-wrapper {
 	position: absolute;
-	top: 54px;
-	left: 60px;
+	top: 53px;
+	left: 0px;
 
 	width: 320px;
 	padding: 32px; 
@@ -1284,12 +1298,14 @@ body {
 
 .modal-contact {
 	position: fixed;
-	left: 158px;
-	top: 0px;
-	bottom: 10px;
+	top: 10px;
+	left: 0px;
+	right: 0px;
 
 	display: none;
 	width: 960px;
+	min-height: 590px;
+	margin: auto;
 	padding: 20px 100px;
 	box-sizing: border-box;
 
